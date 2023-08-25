@@ -73,4 +73,16 @@ public class StudentController {
 	{
 		return sr.updateinfoById(id, ss);
 	}
+	
+	@GetMapping("sort/{name}")
+	public List<StudentEntity> getsortinfo(@PathVariable String name)
+	{
+		return sr.sortinfo(name);
+	}
+	
+	@GetMapping("pagging/{pageno}/{pagesize}")
+	public List<StudentEntity> showpageinfo(@PathVariable int pageno,@PathVariable int  pagesize)
+	{
+		return sr.getbypage(pageno, pagesize);
+	}
 }
